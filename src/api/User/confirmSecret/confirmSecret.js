@@ -11,6 +11,15 @@ export default {
             if(user.loginSecret == secret){
                 // JWT
                 console.log(user.id);
+                await prisma.updateUser({
+                    where: {
+                        id: user.id
+                    },
+                    data: {
+                        loginSecret: ""
+                    }
+                });
+
                 return generateToken(user.id);
             } else {
                 throw Error("Wrong email/secret combination");
