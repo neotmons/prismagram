@@ -14,7 +14,7 @@ type User {
   followers: [User!]!
   followersCount: Int!
   posts: [Post!]!
-  postCount: Int!
+  postsCount: Int!
   likes: [Like!]!
   comments: [Comment!]!
   rooms: [Room!]!
