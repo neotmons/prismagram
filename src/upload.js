@@ -1,6 +1,7 @@
 import multer from "multer";
 
-export const uploadMiddleware = multer({dest: "upload/"});
+const upload = multer({dest: "upload/"});
+export const uploadMiddleware = upload.single("file");
 
 export const uploadController = (req, res) => {
     const { file } = req;
